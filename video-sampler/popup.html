@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<style>
+  :root { color-scheme: dark; }
+  body {
+    width: 320px; margin: 0; padding: 14px 16px 16px;
+    font: 13px/1.6 "Microsoft YaHei", system-ui, sans-serif;
+    background: #14181d; color: #e6edf3;
+  }
+  h1 { font-size: 15px; margin: 0 0 4px; letter-spacing: .5px; }
+  .sub { color: #7d8b99; font-size: 12px; margin-bottom: 12px; }
+  label { display: block; margin: 10px 0 4px; color: #9fb3c8; font-size: 12px; }
+  .row { display: flex; gap: 8px; }
+  select {
+    flex: 1; background: #1d242c; color: #e6edf3;
+    border: 1px solid #2c3742; border-radius: 6px; padding: 6px 8px;
+  }
+  button {
+    width: 100%; margin-top: 14px; padding: 9px 0;
+    background: #1f6feb; color: #fff; border: 0; border-radius: 6px;
+    font-size: 13px; cursor: pointer;
+  }
+  button:disabled { background: #2c3742; color: #6b7785; cursor: default; }
+  #status { margin-top: 12px; font-size: 12px; color: #7ee787; min-height: 18px; }
+  .tip { margin-top: 12px; font-size: 11px; color: #6b7785; line-height: 1.5; }
+  code { color: #9fb3c8; }
+</style>
+</head>
+<body>
+  <h1>视频采样器</h1>
+  <div class="sub">按间隔截取当前标签页，拼成一张网格图下载</div>
+
+  <label>采样间隔</label>
+  <div class="row">
+    <select id="interval">
+      <option value="2">2 秒</option>
+      <option value="3">3 秒</option>
+      <option value="5" selected>5 秒</option>
+      <option value="8">8 秒</option>
+      <option value="15">15 秒</option>
+    </select>
+  </div>
+
+  <label>采样张数</label>
+  <div class="row">
+    <select id="count">
+      <option value="4">4 张（2×2）</option>
+      <option value="9" selected>9 张（3×3）</option>
+      <option value="16">16 张（4×4）</option>
+    </select>
+  </div>
+
+  <button id="go">开始采样</button>
+  <div id="status"></div>
+
+  <div class="tip">
+    用法：先把视频切到全屏或铺满窗口，再点开始。<br>
+    采样期间<strong>不要切换标签页</strong>，否则会截到别的页面。<br>
+    结果存到浏览器默认下载目录下的 <code>视频采样/</code>。
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

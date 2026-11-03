@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "视频采样器 · 帧截取",
+  "version": "1.0.0",
+  "description": "按固定间隔截取当前标签页画面，拼成一张网格图并下载，用来逐帧学习视频里的操作。",
+  "permissions": ["activeTab", "tabs", "downloads", "scripting"],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_title": "视频采样器",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
