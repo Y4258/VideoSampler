@@ -1,0 +1,16 @@
+# 系统垃圾
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# 打包产物
+*.zip
+*.crx
+*.pem
+
+# 编辑器
+.vscode/
+.idea/
+
+# 采样输出
+视频采样/
